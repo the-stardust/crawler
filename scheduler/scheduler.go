@@ -7,8 +7,8 @@ type Scheduler struct {
 	workerChan chan chan engine.Request
 }
 
-func (s *Scheduler) WorkerReady(work chan engine.Request) {
-	s.workerChan <- work
+func (s *Scheduler) WorkerReady(worker chan engine.Request) {
+	s.workerChan <- worker
 }
 
 func (s *Scheduler) Submit(request engine.Request) {
